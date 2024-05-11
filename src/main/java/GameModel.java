@@ -21,25 +21,10 @@ public class GameModel {
         }
     }
 
-    public int[] checkAttempt(int[] attempt) {
-        int[] result = new int[2]; //0-коровы 1-быки
-        boolean[] checked = new boolean[4];
-        for (int i = 0; i < 4; i++) {
-            if (attempt[i] == secretDigits[i]) {
-                result[1]++;
-                checked[i] = true;
-            }
-        }
-        for (int i = 0; i < 4; i++) {
-            if (!checked[i]) {
-                for (int j = 0; j < 4; j++) {
-                    if (attempt[i] == secretDigits[j]) {
-                        result[0]++;
-                        break;
-                    }
-                }
-            }
-        }
-        return result;
+    public GuessResponse checkAttempt(int[] attempt) {
+        return GuessResponse.checkAttempt(attempt, secretDigits);
+    }
+    public void setSecretDigits(int[] digits) {
+        this.secretDigits = digits;
     }
 }
