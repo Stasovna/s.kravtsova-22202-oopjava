@@ -5,7 +5,7 @@ public class SplitInput {
     private String[] commandArgs;
 
     public void splitCommand(String command) {
-        command = command.strip();
+        command = command.trim();
         String[] splitCommand = command.split("\\s");
 
         commandName = splitCommand[0].toUpperCase();

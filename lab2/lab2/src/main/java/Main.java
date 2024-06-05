@@ -41,10 +41,10 @@ public class Main {
 
         while (scanner.hasNext()) {
             String str = scanner.next();
-            if (str.strip().equalsIgnoreCase("EXIT")) {
+            if (str.trim().isEmpty() || str.trim().equalsIgnoreCase("EXIT")) {
                 return;
             }
-            if (str.strip().startsWith("#")) {
+            if (str.trim().startsWith("#")) {
                 continue;
             }
 
