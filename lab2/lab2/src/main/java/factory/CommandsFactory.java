@@ -28,7 +28,7 @@ public class CommandsFactory {
 
         Command newCommand;
         try {
-            newCommand = commandNames.get(commandName).getDeclaredConstructor().newInstance();
+            newCommand = commandNames.get(commandName).getDeclaredConstructor().newInstance();//создает новый экземпляр класса с помощью конструктора, который был получен на предыдущем шаге
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException
                  | IllegalArgumentException | InvocationTargetException e) {
             logger.error("Can't create new command. {}", e.getMessage());

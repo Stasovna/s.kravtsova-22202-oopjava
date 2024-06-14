@@ -24,16 +24,16 @@ public class DivTest {
 
     @Test(expected = MathException.class)
     public void testDivByZero() throws NEmptyStackException, MathException {
-        context.push(100.);
         context.push(0.);
+        context.push(100.);
         divTest.execute(context, null);
     }
 
     @Test
     public void testCorrect() throws MathException, NEmptyStackException {
-        context.push(1234.987);
-        context.push(345.67);
+        context.push(2.1);
+        context.push(4.2);
         divTest.execute(context, null);
-        Assert.assertEquals(3.57273411057, context.peek(), 1e-5D);
+        Assert.assertEquals(2, context.peek(), 1e-5D);
     }
 }
